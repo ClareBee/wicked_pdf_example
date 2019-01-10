@@ -9,6 +9,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/shared/header" %>
+    <div class="container mt-3">
+      <%= yield %>
+    </div>
   </body>
 </html>
