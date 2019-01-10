@@ -32,7 +32,11 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.1.3'
+# wrapper for wkhtmltopdf
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
