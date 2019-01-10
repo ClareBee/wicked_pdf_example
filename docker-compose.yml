@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: postgres:9.6
+    environment:
+      POSTGRES_PASSWORD: ''
+      POSTGRES_USER: root
+      POSTGRES_DB: "pdf_development"
+    ports:
+      - "5432:5432"
+  app:
+    build: .
+    environment:
+      DATABASE_URL: "postgres://root:@db:5432/pdf_development"
+    ports:
+      - "3000:3000"
+    links:
+      - db

@@ -1,3 +1,5 @@
+# Note: You must restart bin/webpack-dev-server for changes to take effect
+
 default: &default
   source_path: app/javascript
   source_entry_path: packs
@@ -12,7 +14,6 @@ default: &default
   cache_manifest: false
 
   extensions:
-    - .jsx
     - .js
     - .sass
     - .scss

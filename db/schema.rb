@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2019_01_10_135243) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "invoice_items", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.decimal "price"
     t.integer "qty"
-    t.integer "invoice_id"
+    t.bigint "invoice_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["invoice_id"], name: "index_invoice_items_on_invoice_id"
@@ -39,4 +42,5 @@ ActiveRecord::Schema.define(version: 2019_01_10_135243) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "invoice_items", "invoices"
 end
